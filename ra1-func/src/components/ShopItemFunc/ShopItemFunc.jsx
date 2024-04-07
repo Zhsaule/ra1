@@ -1,4 +1,5 @@
 import './main.css'
+import PropTypes from 'prop-types';
 
 function ShopItemFunc(props) {
   const { item } = props;
@@ -19,5 +20,16 @@ function ShopItemFunc(props) {
     </div>
   )
 }
+
+ShopItemFunc.propTypes = {
+  item: PropTypes.shape({
+    brand: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    descriptionFull: PropTypes.string,
+    price: PropTypes.number,
+    currency: PropTypes.string
+  }).isRequired,
+};
 
 export default ShopItemFunc

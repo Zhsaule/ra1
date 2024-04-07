@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import './main.css'
 
 class ShopItemClass extends Component {
@@ -22,5 +23,16 @@ class ShopItemClass extends Component {
     );
   }
 }
+
+ShopItemClass.propTypes = {
+  item: PropTypes.shape({
+    brand: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    descriptionFull: PropTypes.string,
+    price: PropTypes.number,
+    currency: PropTypes.string
+  }).isRequired,
+};
 
 export default ShopItemClass;
